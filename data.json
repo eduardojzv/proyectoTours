@@ -1,0 +1,41 @@
+{
+    "_id": "65de310856c03a356f0ab437",
+    "isla": {},
+    "tours": {
+        "catamaran": {
+            "precios": {},
+            "servicios": {},
+            "_id": "65de3174c5e08445b852ba26",
+            "transporte": {
+                "transporte": "catamaran",
+                "img": "imageExample"
+            },
+            "titulo": "Título aleatorio",
+            "descripcion": "Descripción aleatoria",
+            "asientos": 50,
+            "avisos": "Avisos aleatorios",
+            "alimentacion": [
+                {
+                    "_id": "65de3174c5e08445b852ba27",
+                    "tipo": "almuerzo",
+                    "alimentos": [
+                        "arroz",
+                        "frijoles",
+                        "pescado"
+                    ],
+                    "bebidas": [
+                        "cocacola",
+                        "te"
+                    ],
+                    "extras": [
+                        "extra pescado",
+                        "extra carne",
+                        "bebidas extras"
+                    ]
+                }
+            ],
+            "fecha": "2024-02-28T00:00:00.000Z",
+            "duracion": "1 día"
+        }
+    }
+}
