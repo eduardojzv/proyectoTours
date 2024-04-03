@@ -23,12 +23,9 @@ export const CustomRadio = (props) => {
     );
 };
 export default function CheckOutForms() {
-    const dateNow = new Date();
     const { formContact } = useFormStore();
     const { reservation } = useReservationStore();
-    const amount = reservation['0'].amount.value
-    console.log("amount", amount);
-    console.log("reservation", reservation['0']);
+    const { amount, items } = reservation['0']
     return (
         <>
             <div>
@@ -39,12 +36,12 @@ export default function CheckOutForms() {
                 <div>
                     <p>Utilizaremos esta información para enviarle la confirmación y novedades acerca de su reserva.</p>
                 </div>
-                <div className="bg-white border rounded-lg shadow-lg px-6 py-8 max-w-md mx-auto mt-8">
-                    <h1 className="font-bold text-2xl my-4 text-center text-blue-600">KRP Services</h1>
+                <div className="bg-white border rounded-lg shadow-lg px-6 py-8 w-full mx-auto mt-8">
+                    <h1 className="font-bold text-2xl my-4 text-center text-blue-600">Green Zone</h1>
                     <hr className="mb-2" />
-                    <div className="flex justify-between mb-6">
+                    <div className="mb-6 flex flex-wrap justify-between">
                         <h1 className="text-lg font-bold">Factura</h1>
-                        <div className="text-gray-700">
+                        <div className="text-gray-700 flex flex-wrap flex-col">
                             <div>Fecha: {calculateDate('current')}</div>
                             <div>Factura #:{`TOUR-${generateUID().toUpperCase()}`}</div>
                         </div>
@@ -55,7 +52,7 @@ export default function CheckOutForms() {
                         <div className="text-gray-700 mb-2">Celular/telefono : {formContact.phone}</div>
                         <div className="text-gray-700">Correo Electronico : {formContact.email}</div>
                     </div>
-                    <div className='bg-red-200 overflow-y-scroll'>
+                    <div className='overflow-x-auto flex justify-center '>
                         <table className="table-auto border border-slate-400 ">
                             <thead>
                                 <tr>
@@ -66,29 +63,23 @@ export default function CheckOutForms() {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td className="text-left text-gray-700 border border-slate-300">Product 1xxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
-                                    <td className="text-left text-gray-700 border border-slate-300">4</td>
-                                    <td className="text-right text-gray-700 border border-slate-300">$25</td>
-                                    <td className="text-right text-gray-700 border border-slate-300">$100.00</td>
-                                </tr>
-                                <tr>
-                                    <td className="text-left text-gray-700 border border-slate-300">Product 2</td>
-                                    <td className="text-left text-gray-700 border border-slate-300">4</td>
-                                    <td className="text-right text-gray-700 border border-slate-300">$25</td>
-                                    <td className="text-right text-gray-700 border border-slate-300">$50.00</td>
-                                </tr>
-                                <tr>
-                                    <td className="text-left text-gray-700 border border-slate-300">Product 3</td>
-                                    <td className="text-left text-gray-700 border border-slate-300">4</td>
-                                    <td className="text-right text-gray-700 border border-slate-300">$25</td>
-                                    <td className="text-right text-gray-700 border border-slate-300">$75.00</td>
-                                </tr>
+                                {
+                                    items.length > 0 && items.map((item,idx) => (
+                                        <tr key={`item-${idx}`}>
+                                            <td className="text-left text-gray-700 border border-slate-300">{item.name}</td>
+                                            <td className="text-left text-gray-700 border border-slate-300">{item.quantity}</td>
+                                            <td className="text-left text-gray-700 border border-slate-300">{item.unit_amount.value}</td>
+                                            <td className="text-left text-gray-700 border border-slate-300">{item.unit_amount.value*item.quantity}</td>
+                                        </tr>
+                                    ))
+                                }
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <td></td>
+                                    <td></td>
                                     <td className="text-left font-bold text-gray-700 border border-slate-300">Total</td>
-                                    <td className="text-right font-bold text-gray-700 border border-slate-300">${amount}</td>
+                                    <td className="text-right font-bold text-gray-700 border border-slate-300">${amount.value}</td>
                                 </tr>
                             </tfoot>
                         </table>

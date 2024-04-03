@@ -3,8 +3,8 @@ import { NextResponse } from "next/server";
 export async function middleware(request) {
     const SECRET = process.env.COOKIE_SECRET
     const path = request.nextUrl.pathname
-    console.log("path",path);
     const jwt = request.cookies.get('temporalURL')?.value;
+    console.log("request.cookies",request.cookies);
     try {
         if (path && jwt) {
             const separatePath = path.split('/').filter(Boolean);//eliminar los elementos falsy de un array. falsy:(false, null, undefined, 0, '' y Nan) 
