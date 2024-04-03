@@ -10,10 +10,11 @@ import { transformToPayPalFormat } from '@/utils/transformToPayPalFormat'
 import { useReservationStore } from '@/storeZustand/reservationStore'
 import { useFormStore } from '@/storeZustand/formStore'
 import { calculateDate, formatDate } from '@/utils/handleDates'
-import { redirect} from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { generateUID } from '@/utils/generateUID'
 import { createCookie } from '@/lib/serverActions'
 export default function ReservationCard({ data }) {
+    const router = useRouter()
     const { handleReservation } = useReservationStore()
     const { initformDetail } = useFormStore();
     const [sliderCart, setSliderCart] = useState(0);
@@ -49,7 +50,7 @@ export default function ReservationCard({ data }) {
         setClientsPaypal(transformToPayPalFormat(clients, newTotal))
 
     }, [sliderCart, clients]);
-    function setLocalStorage(event) {
+    async function setLocalStorage(event) {
         const UID=generateUID()
         var timeStamp = Date.now();
         const newClients = {};
@@ -75,8 +76,8 @@ export default function ReservationCard({ data }) {
             tourDate: formatDate(tourDate)
         })
         initformDetail(newClients)
-        createCookie(UID)
-        redirect(`/shoppingCart/${UID}`)
+        await createCookie(UID)
+        router.push(`/shoppingCart/${UID}`, { scroll: false })
     }
     return (
         <form className="max-w-96 h-fit bg-white p-2 rounded-lg" action={setLocalStorage}>
