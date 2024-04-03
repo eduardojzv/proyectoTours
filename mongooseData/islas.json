@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "65d69dd865c5624994b0bfcd"
+  },
+  "isla": "isla del coco",
+  "img": [
+    "https://costarica.org/wp-content/uploads/2018/11/IslaDelCoco.jpg",
+    "https://static.nationalgeographic.es/files/styles/image_3200/public/008_nationalgeographic_2728218.jpg?w=1600&h=1067",
+    "https://www.museocostarica.go.cr/wp-content/uploads/Investigaciones/historia-natural/isla-del-coco/galeria-habitats/islotes/4-isla-cocoJPG.jpg",
+    "https://www.repretel.com/wp-content/uploads/2021/12/IMG_Isla-del-Coco_1.jpeg",
+    "https://blog.hoteleus.com/wp-content/uploads/2023/11/Excursiones-en-Costa-Rica-5.png"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65dbed4317fd88eb7ad865a7"
+  },
+  "isla": "isla tortuga",
+  "img": [
+    "https://www.therealdealtours.com/blog/wp-content/uploads/2022/12/Isla-Tortuga-Costa-Rica-696x522.jpg",
+    "https://hare-media-cdn.tripadvisor.com/media/photo-m/1280/29/99/5c/e7/caption.jpg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65dbef2817fd88eb7ad865ae"
+  },
+  "isla": "isla san lucas",
+  "img": [
+    "https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2020/10/14/16026729984538.jpg"
+  ]
+}]

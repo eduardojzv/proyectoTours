@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "65d6820865c5624994b0bfc5"
+  },
+  "transporte": "catamaran",
+  "img": [
+    "https://www.whitsundayescape.com/wp-content/uploads/2016/07/Lagoon-46-Water-back-view-1-1024x620.jpg",
+    "https://www.pugetsoundexpress.com/wp/wp-content/uploads/2021/01/sea-hero2-1024x620.jpg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65d6d6d111925197f21c83c7"
+  },
+  "transporte": "lancha",
+  "img": [
+    "https://crc891.com/wp-content/uploads/2021/04/07-04-2021-COCAINA-TARCOLES-5.jpeg",
+    "https://pbs.twimg.com/media/EX8H0oKWoAMCimz.jpg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65da8949d48c62801357ea5e"
+  },
+  "transporte": "crucero",
+  "img": [
+    "https://www.ict.go.cr/images/noticias/cruceros-temporada.jpeg",
+    "https://www.elfinancierocr.com/resizer/kBgzjafBym0cDjzxPZjBiOj4w9Y=/arc-anglerfish-arc2-prod-gruponacion/public/2564LDZVAZCS5KX4NE7QBXDXQ4.jpg"
+  ]
+}]

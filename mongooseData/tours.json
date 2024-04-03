@@ -1,0 +1,376 @@
+[{
+  "_id": {
+    "$oid": "65de310856c03a356f0ab437"
+  },
+  "isla": {
+    "$oid": "65dbed4317fd88eb7ad865a7"
+  },
+  "transportes": [
+    "catamaran"
+  ],
+  "tours": [
+    {
+      "transporte": {
+        "$oid": "65d6820865c5624994b0bfc5"
+      },
+      "titulo": "Título aleatorio",
+      "descripcion": "Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.",
+      "asientos": 50,
+      "precios": {
+        "general": {
+          "tarifaBase": 25450000,
+          "descuento": 0
+        },
+        "adulto": {
+          "tarifaBase": 0,
+          "descuento": 0
+        },
+        "niño": {
+          "tarifaBase": 0,
+          "descuento": 0
+        },
+        "bebe": {
+          "tarifaBase": 0,
+          "descuento": 0
+        }
+      },
+      "avisos": "Avisos aleatorios",
+      "alimentacion": [
+        {
+          "tipo": "almuerzo",
+          "alimentos": [
+            "arroz",
+            "frijoles",
+            "pescado"
+          ],
+          "bebidas": [
+            "cocacola",
+            "te"
+          ],
+          "extras": [
+            "extra pescado",
+            "extra carne",
+            "bebidas extras"
+          ]
+        }
+      ],
+      "servicios": {
+        "transporte": [
+          "servicio1",
+          "servicio2"
+        ],
+        "alimentacion": [
+          "servicio3",
+          "servicio4"
+        ],
+        "otros": [
+          "servicio5",
+          "servicio6"
+        ],
+        "noIncluidos": [
+          "servicio7",
+          "servicio8"
+        ]
+      },
+      "fecha": "2024-02-28T00:00:00.000Z",
+      "duracion": "1 día",
+      "edades": "Solo mayores de 16 años"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65de388256c03a356f0ab43c"
+  },
+  "isla": {
+    "$oid": "65d69dd865c5624994b0bfcd"
+  },
+  "transportes": [
+    "catamaran",
+    "crucero"
+  ],
+  "tours": [
+    {
+      "transporte": {
+        "$oid": "65d6820865c5624994b0bfc5"
+      },
+      "titulo": "Título aleatorio",
+      "descripcion": "Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.",
+      "asientos": 50,
+      "precios": {
+        "general": {
+          "tarifaBase": 0,
+          "descuento": 0
+        },
+        "adulto": {
+          "tarifaBase": 30000,
+          "descuento": 275000
+        },
+        "niño": {
+          "tarifaBase": 250000,
+          "descuento": 0
+        },
+        "bebe": {
+          "tarifaBase": 200000,
+          "descuento": 175000
+        }
+      },
+      "avisos": "Avisos aleatorios",
+      "alimentacion": [
+        {
+          "tipo": "almuerzo",
+          "alimentos": [
+            "arroz",
+            "frijoles",
+            "pescado"
+          ],
+          "bebidas": [
+            "cocacola",
+            "te"
+          ],
+          "extras": [
+            "extra pescado",
+            "extra carne",
+            "bebidas extras"
+          ]
+        }
+      ],
+      "servicios": {
+        "transporte": [
+          "servicio1",
+          "servicio2"
+        ],
+        "alimentacion": [
+          "servicio3",
+          "servicio4"
+        ],
+        "otros": [
+          "servicio5",
+          "servicio6"
+        ],
+        "noIncluidos": [
+          "servicio7",
+          "servicio8"
+        ]
+      },
+      "fecha": "2024-03-28T00:00:00.000Z",
+      "duracion": "2 días",
+      "edades": "Apartir de los 3 años"
+    },
+    {
+      "transporte": {
+        "$oid": "65da8949d48c62801357ea5e"
+      },
+      "titulo": "Título aleatorio",
+      "descripcion": "Descripción aleatoria",
+      "asientos": 50,
+      "precios": {
+        "general": {
+          "tarifaBase": 10000,
+          "descuento": 85000
+        },
+        "adulto": {
+          "tarifaBase": 0,
+          "descuento": 0
+        },
+        "niño": {
+          "tarifaBase": 0,
+          "descuento": 0
+        },
+        "bebe": {
+          "tarifaBase": 0,
+          "descuento": 0
+        }
+      },
+      "avisos": "Avisos aleatorios",
+      "alimentacion": [
+        {
+          "tipo": "almuerzo",
+          "alimentos": [
+            "arroz",
+            "frijoles",
+            "pescado"
+          ],
+          "bebidas": [
+            "cocacola",
+            "te"
+          ],
+          "extras": [
+            "extra pescado",
+            "extra carne",
+            "bebidas extras"
+          ]
+        }
+      ],
+      "servicios": {
+        "transporte": [
+          "Hotel fiesta",
+          "Hotel x"
+        ],
+        "alimentacion": [
+          "Arroz con verga",
+          "ceviche"
+        ],
+        "otros": [
+          "musica",
+          "entrada a la isla"
+        ],
+        "noIncluidos": [
+          "pito",
+          "cafe"
+        ]
+      },
+      "fecha": "2024-02-28T00:00:00.000Z",
+      "duracion": "1 día",
+      "edades": "de 5 a 90 años"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65e240973e180b453f5c3b7d"
+  },
+  "isla": {
+    "$oid": "65dbef2817fd88eb7ad865ae"
+  },
+  "transportes": [
+    "catamaran",
+    "crucero"
+  ],
+  "tours": [
+    {
+      "transporte": {
+        "$oid": "65d6820865c5624994b0bfc5"
+      },
+      "titulo": "Título aleatorio",
+      "descripcion": "Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.",
+      "asientos": 50,
+      "precios": {
+        "general": {
+          "tarifaBase": 0,
+          "descuento": 0
+        },
+        "adulto": {
+          "tarifaBase": 30000,
+          "descuento": 275000
+        },
+        "niño": {
+          "tarifaBase": 250000,
+          "descuento": 225000
+        },
+        "bebe": {
+          "tarifaBase": 200000,
+          "descuento": 175000
+        }
+      },
+      "avisos": "Avisos aleatorios",
+      "alimentacion": [
+        {
+          "tipo": "almuerzo",
+          "alimentos": [
+            "arroz",
+            "frijoles",
+            "pescado"
+          ],
+          "bebidas": [
+            "cocacola",
+            "te"
+          ],
+          "extras": [
+            "extra pescado",
+            "extra carne",
+            "bebidas extras"
+          ]
+        }
+      ],
+      "servicios": {
+        "transporte": [
+          "servicio1",
+          "servicio2"
+        ],
+        "alimentacion": [
+          "servicio3",
+          "servicio4"
+        ],
+        "otros": [
+          "servicio5",
+          "servicio6"
+        ],
+        "noIncluidos": [
+          "servicio7",
+          "servicio8"
+        ]
+      },
+      "fecha": "2024-03-28T00:00:00.000Z",
+      "duracion": "2 días",
+      "edades": "Apartir de los 3 años"
+    },
+    {
+      "transporte": {
+        "$oid": "65da8949d48c62801357ea5e"
+      },
+      "titulo": "Título aleatorio",
+      "descripcion": "Descripción aleatoria",
+      "asientos": 50,
+      "precios": {
+        "general": {
+          "tarifaBase": 10000,
+          "descuento": 85000
+        },
+        "adulto": {
+          "tarifaBase": 0,
+          "descuento": 0
+        },
+        "niño": {
+          "tarifaBase": 0,
+          "descuento": 0
+        },
+        "bebe": {
+          "tarifaBase": 0,
+          "descuento": 0
+        }
+      },
+      "avisos": "Avisos aleatorios",
+      "alimentacion": [
+        {
+          "tipo": "almuerzo",
+          "alimentos": [
+            "arroz",
+            "frijoles",
+            "pescado"
+          ],
+          "bebidas": [
+            "cocacola",
+            "te"
+          ],
+          "extras": [
+            "extra pescado",
+            "extra carne",
+            "bebidas extras"
+          ]
+        }
+      ],
+      "servicios": {
+        "transporte": [
+          "servicio1",
+          "servicio2"
+        ],
+        "alimentacion": [
+          "servicio3",
+          "servicio4"
+        ],
+        "otros": [
+          "servicio5",
+          "servicio6"
+        ],
+        "noIncluidos": [
+          "servicio7",
+          "servicio8"
+        ]
+      },
+      "fecha": "2024-02-28T00:00:00.000Z",
+      "duracion": "1 día",
+      "edades": "de 5 a 90 años"
+    }
+  ]
+}]
