@@ -10,11 +10,9 @@ import { transformToPayPalFormat } from '@/utils/transformToPayPalFormat'
 import { useReservationStore } from '@/storeZustand/reservationStore'
 import { useFormStore } from '@/storeZustand/formStore'
 import { calculateDate, formatDate } from '@/utils/handleDates'
-import { useRouter } from 'next/navigation'
 import { generateUID } from '@/utils/generateUID'
 import { createCookie } from '@/lib/serverActions'
 export default function ReservationCard({ data }) {
-    const router = useRouter()
     const { handleReservation } = useReservationStore()
     const { initformDetail } = useFormStore();
     const [sliderCart, setSliderCart] = useState(0);
@@ -50,7 +48,7 @@ export default function ReservationCard({ data }) {
         setClientsPaypal(transformToPayPalFormat(clients, newTotal))
 
     }, [sliderCart, clients]);
-    async function setLocalStorage(event) {
+    async function setLocalStorage() {
         const UID=generateUID()
         var timeStamp = Date.now();
         const newClients = {};
@@ -77,10 +75,9 @@ export default function ReservationCard({ data }) {
         })
         initformDetail(newClients)
         await createCookie(UID)
-        router.push(`/shoppingCart/${UID}`, { scroll: false })
     }
     return (
-        <form className="max-w-96 h-fit bg-white p-2 rounded-lg" action={setLocalStorage}>
+        <form className="w-full h-fit bg-white p-2 rounded-lg lg:w-2/4" action={setLocalStorage}>
             <div className="flex justify-center gap-3">
                 <div className="flex flex-col items-center justify-center">
                     <p className="text-lg">Reserve su asiento</p>

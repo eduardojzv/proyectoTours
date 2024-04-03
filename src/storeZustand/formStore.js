@@ -102,7 +102,7 @@ export const useFormStore = create(
         }),
         {
             name: 'form-storage',
-            getStorage: () => localStorage,
+            getStorage: () => sessionStorage,
         }
     )
 );

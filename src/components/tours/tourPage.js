@@ -23,6 +23,7 @@ export default function TourPage({ data }) {
     function handleTransportImages(idx) {
         setSliderImg(idx);
     }
+    console.log("daaa",data);
     return (
         <div className=''>
             {/* top */}
@@ -35,9 +36,9 @@ export default function TourPage({ data }) {
                 <h1 className='text-xl'>Imagenes del tour</h1>
                 <SwiperComponent images={tourImages} />
             </div>
-            <Divider className="my-4" />
+           
             {/*cols*/}
-            <div className='text-center text-2xl bg-slate-600 text-white'>
+            <div className='text-center text-2xl bg-slate-600 text-white my-4'>
                 <h1>Informacion del tour</h1>
             </div>
             <div className='grid grid-cols-1  self-center lg:grid-cols-2 p-1'>
@@ -51,17 +52,17 @@ export default function TourPage({ data }) {
                         <ul className="space-y-2 *:flex *:gap-2">
                             <li>
                                 <UserGroup style={'w-6 h-6'} />
-                                <span>Edades:{data.tours[sliderImg].edades}</span>
+                                <span>Edades: {data.tours[sliderImg].detalles.edades}</span>
                             </li>
                             <li>
                                 <Clock style={'w-6 h-6'} />
                                 <span>
-                                    Duracion: {data.tours[sliderImg].duracion}
+                                    Duracion: {data.tours[sliderImg].detalles.duracion}
                                 </span>
                             </li>
                             <li>
                                 <Traslate style={'w-6 h-6'} />
-                                <span> Guia:Ingles, Español</span>
+                                <span> Guia: {data.tours[sliderImg].detalles.guia.join(',')}</span>
                             </li>
                         </ul>
                         <Divider className="my-4" />
@@ -102,13 +103,13 @@ export default function TourPage({ data }) {
                     </div>
                 </div>
             </div>
-            <Divider className="my-4" />
             {/*Reservar*/}
-            <div className='text-center text-2xl bg-slate-600 text-white'>
+            
+            <div className='text-center text-2xl bg-slate-600 text-white my-4'>
                 <h1>Precios y Reservacion en <strong>{data.transportes[sliderImg]}</strong></h1>
             </div>
-            <div className='grid gap-2 justify-items-center grid-cols-1 lg:grid-cols-2 p-1'>
-                <div className='bg-white text-lg p-2 rounded-lg flex flex-col justify-center items-center gap-4 max-w-96 h-[500px]'>
+            <div className='grid gap-2 w-full justify-items-center grid-cols-1 lg:grid-cols-2 p-1'>
+                <div className='w-full bg-white text-lg p-2 rounded-lg flex flex-col justify-center items-center gap-4  h-fit lg:w-2/4'>
                     <h1 className='text-2xl'>Tarifa</h1>
                     <Divider className="my-2" />
                     {data.tours.length > 0 &&
