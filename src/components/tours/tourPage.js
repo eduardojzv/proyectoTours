@@ -23,6 +23,7 @@ export default function TourPage({ data }) {
     function handleTransportImages(idx) {
         setSliderImg(idx);
     }
+    console.log("daaa",data);
     return (
         <div className=''>
             {/* top */}
@@ -51,17 +52,17 @@ export default function TourPage({ data }) {
                         <ul className="space-y-2 *:flex *:gap-2">
                             <li>
                                 <UserGroup style={'w-6 h-6'} />
-                                <span>Edades:{data.tours[sliderImg].edades}</span>
+                                <span>Edades: {data.tours[sliderImg].detalles.edades}</span>
                             </li>
                             <li>
                                 <Clock style={'w-6 h-6'} />
                                 <span>
-                                    Duracion: {data.tours[sliderImg].duracion}
+                                    Duracion: {data.tours[sliderImg].detalles.duracion}
                                 </span>
                             </li>
                             <li>
                                 <Traslate style={'w-6 h-6'} />
-                                <span> Guia:Ingles, Español</span>
+                                <span> Guia: {data.tours[sliderImg].detalles.guia.join(',')}</span>
                             </li>
                         </ul>
                         <Divider className="my-4" />

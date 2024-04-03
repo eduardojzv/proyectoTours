@@ -1,5 +1,4 @@
 "use client"
-import Calendar from "@/icons/calendar";
 import Clock from "@/icons/clock";
 import Traslate from "@/icons/traslate";
 import UserGroup from "@/icons/userGroup";
@@ -7,13 +6,13 @@ import { numberSeparator } from "@/utils/numberSeparator";
 import { Button, Card, CardBody, CardFooter, CardHeader, Divider } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 export default function CardTours({ item, idx }) {
     const [sliderIdx, setSliderIdx] = useState(0);
     function handleTransport(idx) {
         setSliderIdx(idx);
     }
+    console.log("item.tours[sliderIdx]", item.tours[sliderIdx]);
     return (
         item &&
         <Card className="h-auto max-h-[900px] xl:max-w-96" shadow="sm" key={idx} onPress={() => null}>
@@ -40,17 +39,17 @@ export default function CardTours({ item, idx }) {
                     <ul className="space-y-2 *:flex *:gap-2">
                         <li>
                             <UserGroup style={'w-6 h-6'} />
-                            <span>Edades:{item.tours[sliderIdx].edades}</span>
+                            <span>Edades:{item.tours[sliderIdx].detalles.edades}</span>
                         </li>
                         <li>
                             <Clock style={'w-6 h-6'} />
                             <span>
-                                Duracion: {item.tours[sliderIdx].duracion}
+                                Duracion: {item.tours[sliderIdx].detalles.duracion}
                             </span>
                         </li>
                         <li>
                             <Traslate style={'w-6 h-6'} />
-                            <span> Guia:Ingles, Español</span>
+                            <span> Guia: {item.tours[sliderIdx].detalles.guia.join(',')}</span>
                         </li>
                     </ul>
                     <Divider className="my-4" />

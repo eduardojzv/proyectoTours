@@ -8,7 +8,7 @@ export async function getTours(query) {
         const res = await fetch("http://localhost:3000/api/tours", {
             method: "GET",
             headers: { 'Content-Type': 'application/json' },
-            cache: 'no-store'
+            cache:'no-store'
         })
         if (!res.ok) throw new Error()
         const data = await res.json()
@@ -40,7 +40,7 @@ export async function getToursById(id) {
         const res = await fetch("http://localhost:3000/api/tours/" + id, {
             method: "GET",
             headers: { 'Content-Type': 'application/json' },
-            cache: 'no-store'
+            cache:'no-store'
         })
         if (!res.ok) throw new Error()
         const data = await res.json()

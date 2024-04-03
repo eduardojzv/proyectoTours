@@ -83,8 +83,12 @@ const tourSchema = new Schema({
             otros: [{ type: String, required: false }],
             noIncluidos: [{ type: String, required: false }],
         },
-        fecha: { type: Date, required: true },
-        duracion: { type: String, required: true }
+        detalles:{
+            fecha: { type: Date, required: true },
+            duracion: { type: String, required: true },
+            edades:{type:String,required:true},
+            guia:[{type:String,required:true}]
+        }
     }],
 })
 // const tourSchema = new Schema({
