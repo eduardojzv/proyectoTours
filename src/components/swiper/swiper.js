@@ -9,7 +9,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/thumbs';
 import 'swiper/css/effect-fade';
 // import required modules
-import { Navigation, Pagination,Thumbs, FreeMode, EffectFade } from 'swiper/modules';
+import { Navigation, Pagination, Thumbs, FreeMode, EffectFade } from 'swiper/modules';
 import Image from 'next/image';
 import { useState } from 'react';
 export default function SwiperComponent({ images }) {
@@ -41,7 +41,7 @@ export default function SwiperComponent({ images }) {
                 navigation={true}
                 loop={true}
                 //onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
+                //onSwiper={(swiper) => console.log(swiper)}
                 className='w-full h-96 relative m-4'
             >
                 {images.map((img, idx) => (
@@ -75,8 +75,6 @@ export default function SwiperComponent({ images }) {
                             src={img.img}
                             alt={""}
                             fill={true}
-                            // width={200}
-                            // height={200}
                             priority={true}
                             quality={100}
                             sizes="(max-width: 768px) 100vw,700px"
