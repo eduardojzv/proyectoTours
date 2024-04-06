@@ -10,6 +10,7 @@ export async function GET(request) {
         const tours = await Tours.find()
         .populate('tours.transporte', { transporte: 1,img:1, _id: 0 })
         .populate('isla', { isla: 1,img:1, _id: 0 })
+        console.log("tt",tours);
         return NextResponse.json({ data:tours });
     } catch (error) {
         return NextResponse.json({ error: error.message });

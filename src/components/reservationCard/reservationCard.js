@@ -49,7 +49,7 @@ export default function ReservationCard({ data }) {
 
     }, [sliderCart, clients]);
     async function setLocalStorage() {
-        const UID=generateUID()
+        const UID = generateUID()
         var timeStamp = Date.now();
         const newClients = {};
         const { descripcion, titulo, duracion, fecha } = data.tours[sliderCart];
@@ -89,10 +89,10 @@ export default function ReservationCard({ data }) {
                 <Divider className='my-2' />
                 <RadioGroup
                     classNames={{
-                        label: cn("text-black")
+                        label: cn("font-semibold text-black")
                     }}
                     label="Selecciona el medio de transporte"
-                    color="primary"
+                    color="success"
                     defaultValue={data.transportes[0]}
                 >
                     {data.transportes.map((item, idx) => (
@@ -100,14 +100,15 @@ export default function ReservationCard({ data }) {
                     ))}
                 </RadioGroup>
                 <Divider className='my-2' />
-                <div>
-                    <span>Seleccione la fecha en que desea viajar</span>
-                    <input type="date" name='date' required={true}
+                <div className='flex flex-col gap-2'>
+                    <span className='font-semibold'>Seleccione la fecha en que desea viajar</span>
+                    <input className='flex' type="date" name='date' required={true}
                         min={calculateDate('current')}
                         max={calculateDate('future', 6)}
                         value={tourDate}
                         onChange={handleDate}
                     />
+                    <span className=''><strong>Asientos disponibles</strong> :{data.tours[sliderCart].asientos}</span>
                 </div>
                 <Divider className='my-2' />
                 <div className='flex flex-col gap-2'>

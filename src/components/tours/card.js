@@ -1,12 +1,10 @@
 "use client"
-import Clock from "@/icons/clock";
-import Traslate from "@/icons/traslate";
-import UserGroup from "@/icons/userGroup";
 import { numberSeparator } from "@/utils/numberSeparator";
 import { Button, Card, CardBody, CardFooter, CardHeader, Divider } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { DetailsTour } from "../datailsTour/detailsTour";
 export default function CardTours({ item, idx }) {
     const [sliderIdx, setSliderIdx] = useState(0);
     function handleTransport(idx) {
@@ -36,20 +34,7 @@ export default function CardTours({ item, idx }) {
             <CardFooter className="flex flex-col justify-center items-center w-full">
                 <div className="w-full text-left mb-1" >
                     <ul className="space-y-2 *:flex *:gap-2">
-                        <li>
-                            <UserGroup style={'w-6 h-6'} />
-                            <span>Edades:{item.tours[sliderIdx].detalles.edades}</span>
-                        </li>
-                        <li>
-                            <Clock style={'w-6 h-6'} />
-                            <span>
-                                Duracion: {item.tours[sliderIdx].detalles.duracion}
-                            </span>
-                        </li>
-                        <li>
-                            <Traslate style={'w-6 h-6'} />
-                            <span> Guia: {item.tours[sliderIdx].detalles.guia.join(',')}</span>
-                        </li>
+                        <DetailsTour details={item.tours[sliderIdx].detalles} />
                     </ul>
                     <Divider className="my-4" />
                     <p className="min-h-14   w-full leading-7 line-clamp-2">{item.tours[sliderIdx].descripcion}</p>
@@ -102,7 +87,7 @@ export default function CardTours({ item, idx }) {
                     <Divider className="my-2" />
                     <div className="w-full h-16 flex flex-row items-center justify-center">
                         <Link className="h-full w-full " target="_blank" href={`/tour/${item._id}`}>
-                            <Button className="w-full h-12 " color="success">
+                            <Button className="w-full h-12 text-white " color="success">
                                 Ver mas
                             </Button>
                         </Link>

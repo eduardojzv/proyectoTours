@@ -55,6 +55,12 @@ const islaSchema = new Schema({
     isla: { type: String, required: true },
     img: [{ type: String, required: true }]
 });
+//reserva
+const reservaSchema=new Schema({
+    //tour: { type: Schema.Types.ObjectId, ref: 'Tours' },
+    fecha:{type:Date,required:true},
+    asientosReservados:{type:Number,required:true}
+})
 // Tour esquema
 const tourSchema = new Schema({
     isla: { type: Schema.Types.ObjectId, ref: 'Islas' },
@@ -124,3 +130,4 @@ const tourSchema = new Schema({
 export const Islas = models.Islas || model('Islas', islaSchema);
 export const Transportes = models.Transportes || model('Transportes', transporteSchema);
 export const Tours = models.Tours || model('Tours', tourSchema);
+export const Reservas = models.Reservas || model('Reservas', reservaSchema);
