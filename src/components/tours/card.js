@@ -12,7 +12,6 @@ export default function CardTours({ item, idx }) {
     function handleTransport(idx) {
         setSliderIdx(idx);
     }
-    console.log("item.tours[sliderIdx]", item.tours[sliderIdx]);
     return (
         item &&
         <Card className="h-auto max-h-[900px] xl:max-w-96" shadow="sm" key={idx} onPress={() => null}>

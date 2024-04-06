@@ -3,7 +3,7 @@ import { useReservationStore } from "@/storeZustand/reservationStore";
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js"
 const clientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENTID
 export default function PaypalBtn() {
-    if (!(useReservationStore)) return <div></div>
+    //if (!(useReservationStore)) return <div></div>
     const { reservation } = useReservationStore();
     async function createOrder() {
         const { total, ...orderDetail } = reservation

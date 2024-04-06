@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Input } from '@nextui-org/react'
 import { useFormStore } from '@/storeZustand/formStore';
-import useStore from '@/storeZustand/useStore';
 export default function ContactUserForm({ nextPage }) {
-    // const formStore = useStore(useFormStore, (state) => state)
-    if (!useFormStore) return <div></div>
-    //
+    //if (!useFormStore) return <div></div>
     const { formContact, handleForms, setCurrentPage, setError } = useFormStore()
     const handleInputChange = (e) => {
         const { name, value } = e.target;
