@@ -8,6 +8,7 @@ export default function CheckOutForms() {
     const { formContact } = useFormStore();
     const { reservation } = useReservationStore();
     const { amount, items } = reservation['0']
+    console.log("check",reservation['0']);
     return (
         <>
             <div>

@@ -12,7 +12,7 @@ export default function NavBar() {
     userName: 'eduardo josue zamora valverde'
   })
   const menuItems = [
-    "Home"
+    "Inicio"
   ];
   function logOut() {
     setSession({ session, state: false })

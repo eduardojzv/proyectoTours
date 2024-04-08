@@ -1,6 +1,12 @@
+// function truncDecimals(number) {
+//     return Number(number.toFixed(2));
+// }
 function truncDecimals(number) {
-    return Number(number.toFixed(2));
+    const roundedNumber = Math.round(number * 4) / 4; // Redondea al múltiplo de 0.25 más cercano
+    console.log("truncDecimals",roundedNumber);
+    return Number(roundedNumber.toFixed(2)); // Limita el resultado a dos decimales
 }
+
 export function transformToPayPalFormat(data) {
     const exchangeRate = 503.25; // Tasa de cambio de colones a dólares
     let purchaseUnits = [];
@@ -8,7 +14,7 @@ export function transformToPayPalFormat(data) {
     let total=0
     // Iterar sobre cada tipo de producto en los datos
     Object.keys(data).forEach(type => {
-        total=+truncDecimals(data[type].tariff / exchangeRate)*parseInt(data[type].quantity)
+        total+=truncDecimals(data[type].tariff / exchangeRate)*parseInt(data[type].quantity)
         items.push(
             {
                 name: `${type} ticket`,
@@ -23,7 +29,7 @@ export function transformToPayPalFormat(data) {
     let product = {
         amount: {
             currency_code: "USD",
-            value: total, 
+            value: total.toFixed(2), 
             breakdown: {
                 item_total: {
                     currency_code: "USD",
