@@ -2,10 +2,10 @@ function splitAndLower(array, separator) {
     return array.split(separator).map((item) => item.trim().toLowerCase())
 }
 export async function getTours(query) {
-    await new Promise((resolve)=>  setTimeout(resolve,1000))
+    //await new Promise((resolve)=>  setTimeout(resolve,1000))
     const urlFilters = Object.entries(query) || []
     try {
-        const res = await fetch("https://localhost:3000/api/tours", {
+        const res = await fetch("http://localhost:3000/api/tours", {
             method: "GET",
             headers: { 'Content-Type': 'application/json' },
             cache: 'no-store'
@@ -37,7 +37,7 @@ export async function getTours(query) {
 }
 export async function getToursById(id) {
     try {
-        const res = await fetch("https://localhost:3000/api/tours/" + id, {
+        const res = await fetch("http://localhost:3000/api/tours/" + id, {
             method: "GET",
             headers: { 'Content-Type': 'application/json' },
             cache: 'no-store'

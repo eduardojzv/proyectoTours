@@ -9,7 +9,5 @@ export async function createCookie(url) {
         temp: url
     }, secret, { expiresIn: '1d' });
     cookies().set('temporalURL', token, { secure: true, sameSite: 'none' })
-    console.log("OOO", cookies().get('temporalURL'));
     redirect(`/shoppingCart/${url}`)
 }
-//
