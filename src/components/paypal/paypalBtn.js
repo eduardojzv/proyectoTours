@@ -4,12 +4,12 @@ import { extractData } from "@/utils/paypal/extractOnApproveData";
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js"
 import { useRouter } from 'next/navigation';
 const clientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENTID
-export default function PaypalBtn() {
-    const router=useRouter()
+export default function PaypalBtn({setLoading}) {
+    const router = useRouter()
     //if (!(useReservationStore)) return <div></div>
     const { reservation } = useReservationStore();
     async function createOrder() {
-        console.log("reservation",reservation);
+        console.log("reservation", reservation);
         const { total, ...orderDetail } = reservation
         const res = await fetch('/api/checkout', {
             method: "POST",
@@ -24,29 +24,34 @@ export default function PaypalBtn() {
         return order.id
     }
     async function onApprove(data, actions) {
-        actions.order.capture().then((orderData) => {
+        actions.order.capture().then(async (orderData) => {
+            console.log("datadata", orderData);
             console.log("dataaaaa", extractData(orderData));
+            setLoading(true)
+            //await new Promise((resolve) => setTimeout(resolve, 3000))
             router.push("/thank_you")
-            
+
         })
     }
     return (
-        <PayPalScriptProvider options={{
-            clientId: clientId,
-        }}>
-            <PayPalButtons
-                className="w-2/4"
-                style={{
-                    layout: 'vertical',
-                    color: 'blue',
-                    shape: 'rect',
-                    label: 'paypal'
-                }}
-                createOrder={createOrder}
-                onApprove={onApprove}
-                //onCancel={() => null}
-            />
-        </PayPalScriptProvider>
+        <>
 
+            <PayPalScriptProvider options={{
+                clientId: clientId,
+            }}>
+                <PayPalButtons
+                    className="w-2/4"
+                    style={{
+                        layout: 'vertical',
+                        color: 'blue',
+                        shape: 'rect',
+                        label: 'paypal'
+                    }}
+                    createOrder={createOrder}
+                    onApprove={onApprove}
+                //onCancel={() => null}
+                />
+            </PayPalScriptProvider>
+        </>
     )
 }

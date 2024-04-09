@@ -12,14 +12,21 @@ export default function NavBar() {
     userName: 'eduardo josue zamora valverde'
   })
   const menuItems = [
-    "Inicio"
+    {
+      title: "Inicio",
+      href: "/"
+    },
+    {
+      title: "test",
+      href: "/test"
+    },
   ];
   function logOut() {
     setSession({ session, state: false })
   }
   return (
     <Navbar
-    className="rounded-t-md"
+      className="rounded-t-md"
       shouldHideOnScroll
       isBordered
       isMenuOpen={isMenuOpen}
@@ -33,35 +40,30 @@ export default function NavBar() {
         <NavbarBrand>
           {/* <ACME /> */}
           <Image
-          src={"/icon02.jpg"}
-          width={100}
-          height={100}
-          alt="Picture of the author"
+            src={"/icon02.jpg"}
+            width={100}
+            height={100}
+            alt="Picture of the author"
           />
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand >
-        <Image
-          src={"/icon02.jpg"}
-          width={100}
-          height={100}
-          alt="Picture of the author"
+          <Image
+            src={"/icon02.jpg"}
+            width={100}
+            height={100}
+            alt="Picture of the author"
           />
         </NavbarBrand>
-        {menuItems.map((item, index) => (
-          <NavbarItem key={`${item}-${index}`}>
+        {Object.values(menuItems).map((val, index) => (
+          <NavbarItem key={`${val.title}-${index}`}>
             <Link
-            className={item==="Cart"? "cart" : null}
-              href={item === "Home" ? "/" : `/${item}`}>
-              {item}
+              className={''}
+              href={val.href}>
+              {val.title}
             </Link>
-            {/* {item==="Cart"? 
-              <div className="popover scale-y-100  rounded-lg ease-in duration-200 origin-bottoms lg:scale-y-0">
-                <h1>hola</h1>
-              </div>
-            : null} */}
           </NavbarItem>
         ))}
       </NavbarContent>
@@ -95,17 +97,14 @@ export default function NavBar() {
       </NavbarContent>
 
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+        {Object.values(menuItems).map((val, index) => (
+          <NavbarMenuItem key={`${val.title}-${index}`}>
             <Link
               className="w-full"
-              // color={
-              //   index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
-              // }
-              href={item === "Home" ? "/" : item}
+              href={val.href}
               size="lg"
             >
-              {item}
+              {val.title}
             </Link>
           </NavbarMenuItem>
         ))}

@@ -4,17 +4,17 @@ import UserIcon from '@/icons/userIcon';
 import { useFormStore } from '@/storeZustand/formStore';
 import { useReservationStore } from '@/storeZustand/reservationStore';
 import { clientsQuantityText } from '@/utils/clientsQuantityText';
+import { capitalizeFirstLetter } from '@/utils/text/capitalizeFirstLetter';
 import { Button, Input } from '@nextui-org/react';
 import Image from 'next/image';
 export default function DetailsTourForm({ prevPage, nextPage }) {
-  //if (!(useFormStore && useReservationStore)) return <div></div>
-  const { formContact,formDetail, handleFormsDetails, setCurrentPage, setError } = useFormStore();
+  const { formContact, formDetail, handleFormsDetails, setCurrentPage, setError } = useFormStore();
   const { reservation } = useReservationStore();
   const clientsQuantity = clientsQuantityText(reservation.clients)
-  
-  const handleInputChange = (e, idx,type) => {
+
+  const handleInputChange = (e, idx, type) => {
     const { name, value } = e.target;
-    handleFormsDetails(idx, name, value,type)
+    handleFormsDetails(idx, name, value, type)
   };
   function handleCurrentPage(event, key) {
     if (!event) {
@@ -61,17 +61,18 @@ export default function DetailsTourForm({ prevPage, nextPage }) {
               </div>
             </div>
             {/*Viajeros data*/}
-            <form onSubmit={((event) => handleCurrentPage(event, nextPage))}>
+            <form className='mt-3 p-1 bg-white rounded-lg' onSubmit={((event) => handleCurrentPage(event, nextPage))}>
               <ul>
                 {
                   reservation.clients
                     ? Object.entries(reservation.clients).map(([key, value], idx) => (
-                      <li key={`${key}-${idx}`}>
-                        <span>{ `${key}${value>1 ? 's' : ''}`}</span>
+                      <li key={`${key}-${idx}`} className='mb-1'>
+                        <span>{`${capitalizeFirstLetter(key)}${value > 1 ? 's' : ''}`}</span>
                         {
                           Array.from({ length: value }).map((_, index) => (
                             <div key={index} className='flex flex-row gap-2'>
                               <Input
+                                size='lg'
                                 isRequired
                                 name="name"
                                 variant='underlined'
@@ -79,9 +80,10 @@ export default function DetailsTourForm({ prevPage, nextPage }) {
                                 label="Nombre"
                                 placeholder="Digite su nombre"
                                 value={formDetail.travellers[key][index].name}
-                                onChange={(e) => handleInputChange(e,index,key)}
+                                onChange={(e) => handleInputChange(e, index, key)}
                               />
                               <Input
+                                size='lg'
                                 isRequired
                                 name="lastName"
                                 variant='underlined'
@@ -89,7 +91,7 @@ export default function DetailsTourForm({ prevPage, nextPage }) {
                                 label="Apellido"
                                 placeholder="Digite su apellido"
                                 value={formDetail.travellers[key][index].lastName}
-                                onChange={(e) => handleInputChange(e,index,key)}
+                                onChange={(e) => handleInputChange(e, index, key)}
                               />
                             </div>
                           ))
