@@ -6,9 +6,8 @@ import { useReservationStore } from '@/storeZustand/reservationStore';
 import { clientsQuantityText } from '@/utils/clientsQuantityText';
 import { Button, Input } from '@nextui-org/react';
 import Image from 'next/image';
-import React, { useEffect } from 'react'
 export default function DetailsTourForm({ prevPage, nextPage }) {
-  if (!(useFormStore && useReservationStore)) return <div></div>
+  //if (!(useFormStore && useReservationStore)) return <div></div>
   const { formContact,formDetail, handleFormsDetails, setCurrentPage, setError } = useFormStore();
   const { reservation } = useReservationStore();
   const clientsQuantity = clientsQuantityText(reservation.clients)

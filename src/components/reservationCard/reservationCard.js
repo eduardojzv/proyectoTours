@@ -6,12 +6,12 @@ import { numberSeparator } from '@/utils/numberSeparator'
 import InputsCart from '../inputsCart.js/inputsCart'
 import defaultClients from '@/utils/defaultClients'
 import Calendar from '@/icons/calendar'
-import { transformToPayPalFormat } from '@/utils/transformToPayPalFormat'
 import { useReservationStore } from '@/storeZustand/reservationStore'
 import { useFormStore } from '@/storeZustand/formStore'
 import { calculateDate, formatDate } from '@/utils/handleDates'
 import { generateUID } from '@/utils/generateUID'
 import { createCookie } from '@/lib/serverActions'
+import { transformToPayPalFormat } from '@/utils/paypal/transformToPayPalFormat'
 export default function ReservationCard({ data }) {
     const { handleReservation } = useReservationStore()
     const { initformDetail } = useFormStore();
@@ -44,12 +44,11 @@ export default function ReservationCard({ data }) {
     }
     useEffect(() => {
         const newTotal = Object.values(clients).reduce((acc, currentValue) => acc + (currentValue.quantity * currentValue.tariff), 0);
+        setClientsPaypal(transformToPayPalFormat(clients))
         setTotal(newTotal);
-        setClientsPaypal(transformToPayPalFormat(clients, newTotal))
-
     }, [sliderCart, clients]);
     async function setLocalStorage() {
-        const UID=generateUID()
+        const UID = generateUID()
         var timeStamp = Date.now();
         const newClients = {};
         const { descripcion, titulo, duracion, fecha } = data.tours[sliderCart];
@@ -75,6 +74,7 @@ export default function ReservationCard({ data }) {
         })
         initformDetail(newClients)
         await createCookie(UID)
+
     }
     return (
         <form className="w-full h-fit bg-white p-2 rounded-lg lg:w-2/4" action={setLocalStorage}>
@@ -89,10 +89,10 @@ export default function ReservationCard({ data }) {
                 <Divider className='my-2' />
                 <RadioGroup
                     classNames={{
-                        label: cn("text-black")
+                        label: cn("font-semibold text-black")
                     }}
                     label="Selecciona el medio de transporte"
-                    color="primary"
+                    color="success"
                     defaultValue={data.transportes[0]}
                 >
                     {data.transportes.map((item, idx) => (
@@ -100,21 +100,23 @@ export default function ReservationCard({ data }) {
                     ))}
                 </RadioGroup>
                 <Divider className='my-2' />
-                <div>
-                    <span>Seleccione la fecha en que desea viajar</span>
-                    <input type="date" name='date' required={true}
+                <div className='flex flex-col gap-2'>
+                    <span className='font-semibold'>Seleccione la fecha en que desea viajar</span>
+                    <input className='flex' type="date" name='date' required={true}
                         min={calculateDate('current')}
                         max={calculateDate('future', 6)}
                         value={tourDate}
                         onChange={handleDate}
                     />
+                    <span className=''><strong>Asientos disponibles</strong> :{data.tours[sliderCart].asientos}</span>
                 </div>
                 <Divider className='my-2' />
                 <div className='flex flex-col gap-2'>
+                    {/* Inputs */}
                     {Object.entries(data.tours[sliderCart].precios).map(([key, value], idx) => (
                         value.tarifaBase > 0
                             ?
-                            <InputsCart key={`${key}-${idx}`} handleClients={handleClients} category={key} tariff={value.descuento > 0 ? value.descuento : value.tarifaBase} />
+                            <InputsCart key={`${key}-${idx}-${sliderCart}`} handleClients={handleClients} category={key} tariff={value.descuento > 0 ? value.descuento : value.tarifaBase} />
                             : null
                     ))}
                 </div>

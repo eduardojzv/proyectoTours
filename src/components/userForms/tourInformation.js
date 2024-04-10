@@ -13,9 +13,10 @@ export default function TourInformation() {
         setData(reservation)
     }, [reservation])
     if (Object.keys(data).length === 0) return <div>Cargando</div>
+    //console.log("reservation",reservation);
     return (
         <>
-            <div className='bg-red-200 w-full h-36 col-span-1 relative'>
+            <div className='w-full h-36 col-span-1 relative'>
                 <Image
                     className="rounded-lg"
                     src={data.tourData?.islaImg}
