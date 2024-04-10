@@ -12,7 +12,7 @@ export function extractData(data) {
           },
         payer: {
             name: {
-                given_name: data.payer.name.given_name,
+                name: data.payer.name.given_name,
                 surname: data.payer.name.surname
             },
             email_address: data.payer.email_address

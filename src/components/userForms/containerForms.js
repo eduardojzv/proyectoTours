@@ -7,13 +7,11 @@ import ContactUserForm from './contactUserForm'
 import DetailsTourForm from './detailsTourForm'
 import CheckOutForms from './checkOutForms'
 import { useFormStore } from '@/storeZustand/formStore'
-import useStore from '@/storeZustand/useStore'
-import { useReservationStore } from '@/storeZustand/reservationStore'
 export default function ContainerForms() {
-    const formStore = useStore(useFormStore, (state) => state)
-    const reservationStore = useStore(useReservationStore, (state) => state)
-    if (!(formStore && reservationStore)) return <div></div>
-    const { setCurrentPage, currentPage, error } = formStore;
+    // const formStore = useStore(useFormStore, (state) => state)
+    // const reservationStore = useStore(useReservationStore, (state) => state)
+    // if (!(formStore && reservationStore)) return <div></div>
+    const { setCurrentPage, currentPage, error } = useFormStore();
     const formsComponent = {
         formContact: {
             text: "Datos del contacto",

@@ -1,33 +1,62 @@
 'use client'
+import { useFormStore } from "@/storeZustand/formStore";
 import { useReservationStore } from "@/storeZustand/reservationStore";
 import { extractData } from "@/utils/paypal/extractOnApproveData";
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js"
 import { useRouter } from 'next/navigation';
 const clientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENTID
-export default function PaypalBtn({setLoading}) {
+export default function PaypalBtn({ setLoading }) {
     const router = useRouter()
-    //if (!(useReservationStore)) return <div></div>
     const { reservation } = useReservationStore();
+    const { formContact } = useFormStore()
     async function createOrder() {
         console.log("reservation", reservation);
         const { total, ...orderDetail } = reservation
-        const res = await fetch('/api/checkout', {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json' // Especifica el tipo de contenido como JSON
-            },
-            cache: 'no-store',
-            body: JSON.stringify({ data: orderDetail, totalPrice: total })
+        try {
+            const res = await fetch('/api/checkout', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json' // Especifica el tipo de contenido como JSON
+                },
+                cache: 'no-store',
+                body: JSON.stringify({ data: orderDetail, totalPrice: total })
 
-        })
-        const order = await res.json()
-        return order.id
+            })
+            const order = await res.json()
+            console.log("XXX",order);
+            return order?.id
+        } catch (error) {
+            return { error, status: 400 }
+        }
     }
     async function onApprove(data, actions) {
         actions.order.capture().then(async (orderData) => {
-            console.log("datadata", orderData);
-            console.log("dataaaaa", extractData(orderData));
             setLoading(true)
+            console.log("order data",orderData);
+            try {
+                const res = await fetch('/api/processPurchase', {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json' // Especifica el tipo de contenido como JSON
+                    },
+                    cache: 'no-store',
+                    body: JSON.stringify(
+                        {
+                            order: extractData(orderData),
+                            contact: formContact
+                        }
+                    )
+
+                })
+                if (!res.ok) {
+                    console.log("shhh");
+                    throw new Error('Problemas de conexion')
+                }
+                const data = await res.json()
+                console.log("data res", data);
+            } catch (error) {
+                return { error, status: 400 }
+            }
             //await new Promise((resolve) => setTimeout(resolve, 3000))
             router.push("/thank_you")
 
