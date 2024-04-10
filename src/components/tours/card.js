@@ -42,7 +42,7 @@ export default function CardTours({ item, idx }) {
                 <Divider className="my-1" />
                 {/* transportes */}
                 <div className="w-full flex flex-col justify-center text-center">
-                    <h2>Transportes</h2>
+                    <h2 className="font-semibold">Transportes</h2>
                     <div className="w-full h-12 flex justify-center items-center gap-2">
                         {item.transportes.map((element, idx) => (
                             <React.Fragment key={`${element}-${idx}`}>
@@ -59,7 +59,7 @@ export default function CardTours({ item, idx }) {
                     </div>
                     <Divider className="my-2" />
                     {/* precios */}
-                    <h1>precios</h1>
+                    <h1 className="font-semibold">Precios</h1>
                     {item.tours.length > 0 &&
                         <ul className="flex flex-row h-28 justify-center text-center gap-4 *:flex *:flex-col">
                             {Object.entries(item.tours[sliderIdx].precios).map(([key, value], idx) => (
@@ -87,7 +87,7 @@ export default function CardTours({ item, idx }) {
                     <Divider className="my-2" />
                     <div className="w-full h-16 flex flex-row items-center justify-center">
                         <Link className="h-full w-full " target="_blank" href={`/tour/${item._id}`}>
-                            <Button className="w-full h-12 text-white " color="success">
+                            <Button className="w-full h-12 text-white  text-lg" color="success">
                                 Ver mas
                             </Button>
                         </Link>

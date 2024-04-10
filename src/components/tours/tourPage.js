@@ -29,7 +29,7 @@ export default function TourPage({ data }) {
                 <span className='text-2xl'>Ofrecido por: Green Zone</span>
             </div>
             {/*imagenes de galeria*/}
-            <div className='w-full text-center p-1'>
+            <div className='w-full text-center'>
                 <h1 className='text-xl text-white bg-green-500'>Imagenes del tour</h1>
                 <SwiperComponent images={tourImages} />
             </div>
