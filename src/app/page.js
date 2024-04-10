@@ -6,7 +6,6 @@ import { getTours } from "@/lib/data";
 export default async function Home({ searchParams }) {
   const tours = await getTours(searchParams)
   const filterTours = await getTours({})
-  console.log("tours",tours);
   return (
     <div className="bg-white">
       <Banner />
