@@ -4,7 +4,7 @@ export function IconHeader({w,h}) {
       xmlns="http://www.w3.org/2000/svg"
       width={w}
       height={h}
-      fill="#000"
+      fill="#3442B9"
       version="1.1"
       viewBox="0 0 470 470"
       xmlSpace="preserve"

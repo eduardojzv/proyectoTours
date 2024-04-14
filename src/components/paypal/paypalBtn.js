@@ -23,7 +23,6 @@ export default function PaypalBtn({ setLoading }) {
 
             })
             const order = await res.json()
-            console.log("XXX",order);
             return order?.id
         } catch (error) {
             return { error, status: 400 }
