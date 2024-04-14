@@ -7,7 +7,6 @@ export default function ContactUserForm({ nextPage }) {
         handleForms('formContact', name, value)
     };
     function handleCurrentPage(event, key) {
-        console.log("TT");
         if (!event) {
             setCurrentPage(key)
             return null
@@ -50,7 +49,7 @@ export default function ContactUserForm({ nextPage }) {
                         isRequired
                     />
                     <div className='flex flex-row'>
-                        <Input className='w-2/4' name='phone' type="text" variant='underlined' label="Numero de telefono/celular" placeholder=""
+                        <Input  name='phone' type="text" variant='underlined' label="Numero de telefono/celular" placeholder="Digite su numero telefonico/celular"
                             value={formContact.phone}
                             onChange={handleInputChange}
                             isRequired
