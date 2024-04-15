@@ -101,7 +101,7 @@ export const useFormStore = create(
                 })
         }),
         {
-            name: 'form-storage',
+            name: 'formStorage',
             getStorage: () => sessionStorage,
         }
     )

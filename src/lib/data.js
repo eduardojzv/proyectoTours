@@ -10,7 +10,7 @@ export async function getTours(query) {
             headers: { 'Content-Type': 'application/json' },
             cache: 'no-store'
         })
-        if (!res.ok) throw new Error()
+        if (!res.ok) return []
         const data = await res.json()
         if (urlFilters.length === 0) return data?.data
         let itemValuesTrimmed = []
@@ -42,7 +42,7 @@ export async function getToursById(id) {
             headers: { 'Content-Type': 'application/json' },
             cache: 'no-store'
         })
-        if (!res.ok) throw new Error()
+        if (!res.ok) return []
         const data = await res.json()
         return data?.data
     } catch (error) {

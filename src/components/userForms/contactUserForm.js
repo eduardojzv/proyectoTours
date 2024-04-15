@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from 'react'
 import { Button, Input } from '@nextui-org/react'
 import { useFormStore } from '@/storeZustand/formStore';
 export default function ContactUserForm({ nextPage }) {
-    //if (!useFormStore) return <div></div>
     const { formContact, handleForms, setCurrentPage, setError } = useFormStore()
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         handleForms('formContact', name, value)
     };
     function handleCurrentPage(event, key) {
-        console.log("TT");
         if (!event) {
             setCurrentPage(key)
             return null
@@ -52,7 +49,7 @@ export default function ContactUserForm({ nextPage }) {
                         isRequired
                     />
                     <div className='flex flex-row'>
-                        <Input className='w-2/4' name='phone' type="text" variant='underlined' label="Numero de telefono/celular" placeholder=""
+                        <Input  name='phone' type="text" variant='underlined' label="Numero de telefono/celular" placeholder="Digite su numero telefonico/celular"
                             value={formContact.phone}
                             onChange={handleInputChange}
                             isRequired

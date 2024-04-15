@@ -7,8 +7,8 @@ import ContactUserForm from './contactUserForm'
 import DetailsTourForm from './detailsTourForm'
 import CheckOutForms from './checkOutForms'
 import { useFormStore } from '@/storeZustand/formStore'
-import useStore from '@/storeZustand/useStore'
 import { useReservationStore } from '@/storeZustand/reservationStore'
+import useStore from '@/storeZustand/useStore'
 export default function ContainerForms() {
     const formStore = useStore(useFormStore, (state) => state)
     const reservationStore = useStore(useReservationStore, (state) => state)

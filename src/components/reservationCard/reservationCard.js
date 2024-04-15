@@ -20,6 +20,7 @@ export default function ReservationCard({ data }) {
     const [total, setTotal] = useState(0);
     const [tourDate, setTourDate] = useState('')
     const [clientsPaypal, setClientsPaypal] = useState(transformToPayPalFormat(clients))
+    const [loading,setLoading]=useState(false)
     function handleClients(client, tariff, quantity) {
         const updatedClients = { ...clients };
         if (quantity > 0) {
@@ -48,6 +49,7 @@ export default function ReservationCard({ data }) {
         setTotal(newTotal);
     }, [sliderCart, clients]);
     async function setLocalStorage() {
+        setLoading(true)
         const UID = generateUID()
         var timeStamp = Date.now();
         const newClients = {};
@@ -126,7 +128,7 @@ export default function ReservationCard({ data }) {
                     <span>Total:{numberSeparator(total)}</span>
                 </div>
                 <div className='w-full'>
-                    <Button className="w-full h-12" type='submit' color="success" startContent={<Calendar style={"w-10 h-10"} />}>
+                    <Button className="w-full h-12" type='submit' color="success" isLoading={loading} startContent={<Calendar style={"w-10 h-10"} />}>
                         Reservar
                     </Button>
                 </div>
