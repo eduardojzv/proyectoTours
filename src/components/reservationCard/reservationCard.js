@@ -128,8 +128,8 @@ export default function ReservationCard({ data }) {
                     <span>Total:{numberSeparator(total)}</span>
                 </div>
                 <div className='w-full'>
-                    <Button className="w-full h-12" type='submit' color="success" isLoading={loading} startContent={<Calendar style={"w-10 h-10"} />}>
-                        Reservar
+                    <Button className="w-full h-12 text-white" type='submit' color="success" isLoading={loading} startContent={<Calendar style={"w-10 h-10"} />}>
+                       Reservar
                     </Button>
                 </div>
             </div>
