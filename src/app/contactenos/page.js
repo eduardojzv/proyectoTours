@@ -21,7 +21,7 @@ export default function Contact() {
           <ul>
             <li><p><strong> Teléfono:  </strong>6175-8264 / 6077-9967</p></li><br></br>
             <li><p> <strong> Whatsapp:  </strong>6175-8264 / 6077-9967</p> </li><br></br>
-            <li><span> <strong>email:</strong> <a className="text-blue-600" href="mailto:greenzonetours506@gmail.com">AllBlueTours@gmail.com</a></span></li>
+            <li><span> <strong>email:</strong> <a className="text-blue-500" href="mailto:allbluetours506@gmail.com">allbluetours506@gmail.com</a></span></li>
           </ul>
         </div>
       </div>
