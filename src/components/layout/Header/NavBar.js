@@ -11,8 +11,8 @@ export default function App() {
       href: "/"
     },
     {
-      title: "Soporte",
-      href: "/soporte"
+      title: "Contactenos",
+      href: "/contactenos"
     },
     {
       title: "Politicas y privacidad",
