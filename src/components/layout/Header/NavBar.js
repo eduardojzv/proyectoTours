@@ -35,7 +35,7 @@ export default function App() {
           className="sm:hidden"
         />
         <NavbarBrand className="flex gap-2">
-          <IconHeader w={35} h={35} />
+          <IconHeader w={55} h={55} />
           <p className="font-bold text-inherit">AllBlue Tours</p>
         </NavbarBrand>
       </NavbarContent>

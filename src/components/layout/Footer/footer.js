@@ -1,3 +1,4 @@
+import { IconHeader } from '@/icons/IconHeader';
 import React from 'react'
 
 export default function Footer() {
@@ -21,12 +22,7 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="text-lg font-bold mb-2">Redes sociales</h3>
-                        <ul>
-                            <li><a href="#" className="text-blue-600 hover:underline">Facebook</a></li>
-                            <li><a href="#" className="text-blue-600 hover:underline">Instagram</a></li>
-                            <li><a href="#" className="text-blue-600 hover:underline">Twitter</a></li>
-                        </ul>
+                      <a href="/" ><IconHeader w={80} h={80} /></a>
                     </div>
                 </div>
                 <div className="text-center mt-4">
