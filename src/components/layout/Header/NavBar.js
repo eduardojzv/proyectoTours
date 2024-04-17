@@ -16,7 +16,7 @@ export default function App() {
     },
     {
       title: "Politicas y privacidad",
-      href: "/politicas&privacidad"
+      href: "/policies&private"
     },
   ];
   const [session, setSession] = useState({
