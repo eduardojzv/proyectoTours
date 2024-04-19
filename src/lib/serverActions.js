@@ -7,9 +7,9 @@ import { Resend } from 'resend';
 export async function createCookie(url) {
     const SECRET = process.env.COOKIE_SECRET
     const token = sign({
-        temp: url
+        temp: url,
+        pay_state:false
     }, SECRET, { expiresIn: '1d' });
-    console.log("server Action secret", SECRET);
     cookies().set('temporalURL', token, { secure: true, sameSite: 'none' })
     redirect(`/shoppingCart/${url}`)
 }

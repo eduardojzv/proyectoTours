@@ -32,7 +32,7 @@ export default function ContainerForms() {
         }
     }
     return (
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-2 min-h-[500px]'>
             <div>
                 <Breadcrumbs
                     onAction={(key) => setCurrentPage(key)}
