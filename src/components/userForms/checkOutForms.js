@@ -77,7 +77,7 @@ export default function CheckOutForms() {
                         </div>
                     </div>
                 </div >
-                : <div className='bg-slate-700 text-white opacity-55 w-full min-h-full z-50 absolute top-[50%] left-[50%] translate translate-y-[-50%] translate-x-[-50%]'>
+                : <div className='bg-slate-700 text-white opacity-55 w-full h-screen z-50 absolute'>
                     <Loading />
                 </div>
             }

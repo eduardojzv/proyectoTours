@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { persist } from 'zustand/middleware'
+import { createJSONStorage, persist } from 'zustand/middleware'
 export const useReservationStore = create(
     persist(
         (set) => ({
@@ -10,7 +10,7 @@ export const useReservationStore = create(
         }),
         {
             name: 'orderData',
-            getStorage: () => localStorage,
+            storage: createJSONStorage(() => localStorage),
         }
     )
 );

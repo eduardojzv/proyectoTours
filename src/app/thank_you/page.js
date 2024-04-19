@@ -1,21 +1,21 @@
 import { cookies } from 'next/headers';
 import { verify } from 'jsonwebtoken';
 import React from 'react'
+import { redirect } from 'next/navigation';
 
 export default async function page() {
   const SECRET = process.env.COOKIE_SECRET;
-  const cookie = cookies().get('purchase')?.value;
+  const token = cookies().get('purchase')?.value;
 
-  if (!cookie) {
-    return <div>Error page</div>;
+  if (!token) {
+    redirect("/")
   }
 
-  verify(cookie, SECRET, function (err, value) {
+  verify(token, SECRET, function (err, value) {
     if (err || !value || !value.pay_state) {
-      return <div>Error page</div>;
+      redirect("/")
     }
   });
-
   return (
     <div>thank_you</div>
   );
