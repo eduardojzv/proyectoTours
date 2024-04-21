@@ -56,7 +56,7 @@ export default function ContactUserForm({ nextPage }) {
                         />
                     </div>
                 </div>
-                <div className='flex justify-end w-2/4'>
+                <div className='flex justify-end w-2/4 mt-9'>
                     <Button type='submit' color="primary" variant="shadow">
                         Siguiente
                     </Button>

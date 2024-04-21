@@ -101,7 +101,7 @@ export default function DetailsTourForm({ prevPage, nextPage }) {
                     : null
                 }
               </ul>
-              <div className='flex justify-end w-2/4 gap-2 mt-3'>
+              <div className='flex justify-end w-2/4 gap-2 mt-9'>
                 <Button color="primary" variant="shadow" onClick={(() => handleCurrentPage(undefined, prevPage))}>
                   Volver
                 </Button>
@@ -111,7 +111,6 @@ export default function DetailsTourForm({ prevPage, nextPage }) {
               </div>
             </form>
           </div>
-
           : null
       }
     </>

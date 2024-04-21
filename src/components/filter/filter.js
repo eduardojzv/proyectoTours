@@ -66,10 +66,10 @@ export default function Filter({ tours }) {
             <AccordionItem
               key={index}
               aria-label={`Accordion ${index + 1}`}
-              title={categoria}
+              title="Islas"
               subtitle={
                 <span>
-                  filtros: {filters[categoria]?.join(",")}
+                  Filtros: {filters[categoria]?.join(",")}
                 </span>
               }>
               <div className="flex flex-col gap-3">
@@ -80,7 +80,7 @@ export default function Filter({ tours }) {
                 >
                   {Object.entries(characteristics[categoria]).map(([key, value], subIndex) => (
                     <Checkbox key={`${key}+${subIndex}`} value={key}>
-                      {key} ({value})
+                      {key}
                     </Checkbox>
                   ))}
                 </CheckboxGroup>
