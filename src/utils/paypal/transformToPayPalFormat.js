@@ -1,10 +1,9 @@
-// function truncDecimals(number) {
-//     return Number(number.toFixed(2));
+// export function truncDecimals(number) {
+//     const roundedNumber = Math.round(number * 4) / 4; // Redondea al múltiplo de 0.25 más cercano
+//     return Number(roundedNumber.toFixed(2)); // Limita el resultado a dos decimales
 // }
-function truncDecimals(number) {
-    const roundedNumber = Math.round(number * 4) / 4; // Redondea al múltiplo de 0.25 más cercano
-    return Number(roundedNumber.toFixed(2)); // Limita el resultado a dos decimales
-}
+
+import { truncDecimals } from "./truncDecimals";
 
 export function transformToPayPalFormat(data) {
     const exchangeRate = 503.25; // Tasa de cambio de colones a dólares

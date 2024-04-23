@@ -49,8 +49,15 @@ export default function ContactUserForm({ nextPage }) {
                         isRequired
                     />
                     <div className='flex flex-row'>
-                        <Input  name='phone' type="text" variant='underlined' label="Numero de telefono/celular" placeholder="Digite su numero telefonico/celular"
+                        <Input name='phone' type="text" variant='underlined' label="Numero de telefono/celular" placeholder="Digite su numero telefonico/celular"
                             value={formContact.phone}
+                            onChange={handleInputChange}
+                            isRequired
+                        />
+                    </div>
+                    <div className='flex flex-row'>
+                        <Input name='DNI' type="text" variant='underlined' label="Ceduka" placeholder="Digite su cedula"
+                            value={formContact.DNI}
                             onChange={handleInputChange}
                             isRequired
                         />
