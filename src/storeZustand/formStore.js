@@ -10,6 +10,7 @@ export const useFormStore = create(
                 lastName: '',
                 email: '',
                 phone: '',
+                DNI:'',
                 state: false
             },
             formDetail: {

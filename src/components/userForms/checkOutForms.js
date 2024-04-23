@@ -30,12 +30,12 @@ export default function CheckOutForms() {
                                 <div className=" mb-2"><strong>Nombre completo : </strong> {`${formContact.name} ${formContact.lastName}`}</div>
                                 <div className=" mb-2"><strong>Celular/telefono</strong> : {formContact.phone}</div>
                                 <div className=""><strong>Correo Electronico</strong> : {formContact.email}</div>
-                                <div className=""><strong>Cedula</strong> : 604680123</div>
+                                <div className=""><strong>Cedula</strong> : {formContact.DNI}</div>
                             </div>
                             <div className=" flex flex-wrap flex-col">
                                 <div><strong>Fecha: </strong> {calculateDate('current')}</div>
                                 <div><strong>Factura #: </strong>{`TOUR-${generateUID().toUpperCase()}`}</div>
-                                <div><strong>Consecutivo #: </strong>0000000000000000000000034</div>
+                                <div><strong>Consecutivo #: </strong>00000000000034</div>
                             </div>
                         </div>
                         <div className='overflow-x-auto flex flex-col justify-center '>

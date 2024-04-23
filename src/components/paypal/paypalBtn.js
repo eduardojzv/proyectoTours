@@ -30,7 +30,7 @@ export default function PaypalBtn({ setLoading }) {
     async function onApprove(data, actions) {
         actions.order.capture().then(async (orderData) => {
             setLoading(true)
-            console.log("order data", orderData);
+            //console.log("order data", orderData);
             try {
                 const res = await fetch('/api/processPurchase', {
                     method: "POST",
