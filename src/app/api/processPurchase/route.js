@@ -44,7 +44,6 @@ export async function POST(request) {
             body: JSON.stringify(dataToXML)
         });
         if (!response.ok) {
-            console.log("error.ok", response);
             throw new Error('Error al conectarse con xml');
         }
         const data = await response.json();
