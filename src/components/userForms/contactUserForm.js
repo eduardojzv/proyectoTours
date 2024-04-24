@@ -43,7 +43,7 @@ export default function ContactUserForm({ nextPage }) {
                         onChange={handleInputChange}
                         isRequired
                     />
-                    <Input name='email' type="email" variant='underlined' label="Email" placeholder="Enter your email"
+                    <Input name='email' type="email" variant='underlined' label="Email" placeholder="Digite su correo electronico"
                         value={formContact.email}
                         onChange={handleInputChange}
                         isRequired
