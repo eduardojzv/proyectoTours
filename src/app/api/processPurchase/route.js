@@ -8,7 +8,7 @@ export async function POST(request) {
         const SECRET = process.env.COOKIE_SECRET
         const token = sign({
             pay_state: true
-        }, SECRET, { expiresIn: '120s' });
+        }, SECRET, { expiresIn: '30s' });
         cookies().set('purchase', token, { secure: true, sameSite: 'strict' })
         cookies().delete("temporalURL")
         //console.log("order",order);
@@ -44,7 +44,7 @@ export async function POST(request) {
             body: JSON.stringify(dataToXML)
         });
         if (!response.ok) {
-            console.log("error.ok",response);
+            console.log("error.ok", response);
             throw new Error('Error al conectarse con xml');
         }
         const data = await response.json();
@@ -54,7 +54,6 @@ export async function POST(request) {
             data: "hola"
         });
     } catch (error) {
-        console.log(error);
-        return NextResponse.json({ error })
+        return NextResponse.json({ error: error?.message })
     }
 }

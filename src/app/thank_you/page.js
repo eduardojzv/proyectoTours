@@ -17,6 +17,11 @@ export default async function page() {
     }
   });
   return (
-    <div>thank_you</div>
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
+      <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <h1 className="text-2xl font-semibold mb-4">¡Gracias por reservar y comprar en nuestra página de tours de islas!🙌🏽</h1>
+        <p className="text-lg text-gray-700">Esperamos que disfrutes tu próximo tour.</p>
+      </div>
+    </div>
   );
 }
