@@ -18,6 +18,10 @@ export default function App() {
       title: "Politicas y privacidad",
       href: "/policies&private"
     },
+    {
+      title: "Recomendaciones y Políticas de Tours",
+      href: "/recommendations&policies"
+    },
   ];
   const [session, setSession] = useState({
     state: true,

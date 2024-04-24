@@ -21,7 +21,7 @@ export default function ContacUsForms() {
         <div className='p-2'>
             <div className='text-center'>
                 <h1>¿TIENES PREGUNTAS SOBRE NUESTROS SERVICIOS?</h1>
-                <p>En ILT Costa Rica estamos dedicados a servir a nuestros clientes con el máximo servicio personalizado 
+                <p>En AllBlue Tours Costa Rica estamos dedicados a servir a nuestros clientes con el máximo servicio personalizado 
                     y nos esforzamos por lograr la satisfacción total del cliente con todos nuestros servicios. 
                     Si desea obtener más información sobre cualquiera de nuestros servicios, no dude en llamarnos o enviarnos un correo electrónico.</p><br></br>
             </div>
