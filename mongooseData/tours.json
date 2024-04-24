@@ -14,7 +14,7 @@
         "$oid": "65d6820865c5624994b0bfc5"
       },
       "titulo": "Título aleatorio",
-      "descripcion": "Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.",
+      "descripcion": "Se ubica frente a la Peninsula de Nicoya, es conocida por su arena blanca. Esta conformada por dos pequeñas islas: Alcatraz cuaya extensión es de 60 hectáreas y tiene forma de una tortuga y Tolinga la isla más grande con 120 hectáreas.\nLa isla Tolinga cuenta con bandera azul ecológica debido a que cuenta con un bosque protegido y sus aguas no están contaminadas. \nEl tour incluye frutas, agua, almuerzo, café en la tarde, baños y duchas en el muelle, sanitario en la isla, habitación o tiendas de campaña y póliza del INS.",
       "asientos": 50,
       "precios": {
         "general": {
@@ -60,23 +60,25 @@
           "servicio2"
         ],
         "alimentacion": [
-          "servicio3",
-          "servicio4"
+          " Frutas tropicales Fescas: Piña, sandía, papaya",
+          "Mini sandwiches de pollo con vegetales frescos"
         ],
         "otros": [
-          "servicio5",
-          "servicio6"
+          "Se alquilan hamacas",
+          " Juego de voleibol "
         ],
         "noIncluidos": [
-          "servicio7",
-          "servicio8"
+          " No incluye el pago de viajes en Banana",
+          " No hay agua potable"
         ]
       },
-      "detalles":{
+      "detalles": {
         "fecha": "2024-03-28T00:00:00.000Z",
         "duracion": "2 días",
         "edades": "Apartir de los 3 años",
-        "guia":["frances"]
+        "guia": [
+          "frances"
+        ]
       }
     }
   ]
@@ -98,7 +100,7 @@
         "$oid": "65d6820865c5624994b0bfc5"
       },
       "titulo": "Título aleatorio",
-      "descripcion": "Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.",
+      "descripcion": "Reconocida mundialmente por su exuberantes ecosistemas. Cuenta con programas para gestionar el estado de la isla y a su vez impulsa el turismo sostenible con rotulación informátiva y monitoreo de empresas turísticas. \nEl tour incluye refrescos y agua todo el día, flotadores, chalecos salvavidas para nadar, habitación, almuerzo en transporte o isla, café en la tarde y cena; y seguro de vida del INS.",
       "asientos": 50,
       "precios": {
         "general": {
@@ -144,23 +146,27 @@
           "servicio2"
         ],
         "alimentacion": [
-          "servicio3",
-          "servicio4"
+          "Smoothies de frutas tropicales",
+          "Chips de plátano con guacamole"
         ],
         "otros": [
-          "servicio5",
-          "servicio6"
+          "Servicios sanitarios",
+          "Paseo en banana"
         ],
         "noIncluidos": [
-          "servicio7",
-          "servicio8"
+          "No se hace snorkel",
+          "No hay servicio de agua potable"
         ]
       },
-      "detalles":{
+      "detalles": {
         "fecha": "2024-03-28T00:00:00.000Z",
         "duracion": "2 días",
         "edades": "Apartir de los 3 años",
-        "guia":["ingles","español","ruso"]
+        "guia": [
+          "Ingles",
+          "Español",
+          "Ruso"
+        ]
       }
     },
     {
@@ -168,7 +174,7 @@
         "$oid": "65da8949d48c62801357ea5e"
       },
       "titulo": "Título aleatorio",
-      "descripcion": "Descripción aleatoria",
+      "descripcion": "Reconocida mundialmente por su exuberantes ecosistemas. Cuenta con programas para gestionar el estado de la isla y a su vez impulsa el turismo sostenible con rotulación informátiva y monitoreo de empresas turísticas. \nEl tour incluye refrescos y agua todo el día, flotadores, chalecos salvavidas para nadar, habitación, almuerzo en transporte o isla, café en la tarde y cena; y seguro de vida del INS.",
       "asientos": 50,
       "precios": {
         "general": {
@@ -211,26 +217,30 @@
       "servicios": {
         "transporte": [
           "Hotel fiesta",
-          "Hotel x"
+          "Hotel Las brisas"
         ],
         "alimentacion": [
-          "Arroz con verga",
-          "ceviche"
+          "Pinchos de frutas con miel",
+          "Mini empanadas de queso"
         ],
         "otros": [
-          "musica",
-          "entrada a la isla"
+          "Música",
+          "Agua y Refrescos"
         ],
         "noIncluidos": [
-          "pito",
-          "cafe"
+          "No se hace jet ski",
+          "Servicio de agua potable"
         ]
       },
-      "detalles":{
+      "detalles": {
         "fecha": "2024-03-28T00:00:00.000Z",
         "duracion": "2 días",
         "edades": "Apartir de los 3 años",
-        "guia":["ingles","frances","español"]
+        "guia": [
+          "Ingles",
+          "Frances",
+          "Español"
+        ]
       }
     }
   ]
@@ -252,7 +262,7 @@
         "$oid": "65d6820865c5624994b0bfc5"
       },
       "titulo": "Título aleatorio",
-      "descripcion": "Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.Lorem esse duis exercitation quis est sint anim. Qui nisi ipsum Lorem commodo elit.",
+      "descripcion": "En esta hermosa isla, se puede disfrutar de la flora y fauna que la habita al caminar por sus senderos. El mayor atractivo de este paraíso es ironicamente su historia como centro penitenciario desde 1873 hasta 1991. Actualmente es un área de vida silvestre que fue restaurada con la introducción de especies endémicas que una vez fueron el alimento de los presos.    \nEl tour incluye almuerzo, café en la tarde y cena, juguetes de playa, habitación o tiendas de campaña, puede traer bocadillos o bebidas (no se permiten neveras portátiles). Tenemos ventas de recuerdos como pulseras, collares y llaveros. El tour incluye seguro del INS",
       "asientos": 50,
       "precios": {
         "general": {
@@ -298,23 +308,26 @@
           "servicio2"
         ],
         "alimentacion": [
-          "servicio3",
-          "servicio4"
+          "Tostadas de pan integral con aguacate",
+          "Brochetas de pollo a la parrilla"
         ],
         "otros": [
-          "servicio5",
-          "servicio6"
+          "café en la tarde y cena",
+          "Senderismo"
         ],
         "noIncluidos": [
-          "servicio7",
-          "servicio8"
+          "No se visita el cementerio",
+          "Servicio de agua potable"
         ]
       },
-      "detalles":{
+      "detalles": {
         "fecha": "2024-03-28T00:00:00.000Z",
         "duracion": "2 días",
         "edades": "Apartir de los 3 años",
-        "guia":["ingles","español"]
+        "guia": [
+          "Ingles",
+          "Español"
+        ]
       }
     },
     {
@@ -322,7 +335,7 @@
         "$oid": "65da8949d48c62801357ea5e"
       },
       "titulo": "Título aleatorio",
-      "descripcion": "Descripción aleatoria",
+      "descripcion": "En esta hermosa isla, se puede disfrutar de la flora y fauna que la habita al caminar por sus senderos. El mayor atractivo de este paraíso es ironicamente su historia como centro penitenciario desde 1873 hasta 1991. Actualmente es un área de vida silvestre que fue restaurada con la introducción de especies endémicas que una vez fueron el alimento de los presos.    \nEl tour incluye almuerzo, café en la tarde y cena, juguetes de playa, habitación o tiendas de campaña, puede traer bocadillos o bebidas (no se permiten neveras portátiles). Tenemos ventas de recuerdos como pulseras, collares y llaveros. El tour incluye seguro del INS",
       "asientos": 50,
       "precios": {
         "general": {
@@ -368,23 +381,25 @@
           "servicio2"
         ],
         "alimentacion": [
-          "servicio3",
-          "servicio4"
+          "Almuerzo y cena",
+          "Ingreso al Mariposario de la isla"
         ],
         "otros": [
-          "servicio5",
-          "servicio6"
+          "Alquiler de Habitaciones",
+          "Canciones con guitarra en una fogata junto a la playa"
         ],
         "noIncluidos": [
-          "servicio7",
-          "servicio8"
+          "No hay alquiler de jet ski ni hamacas",
+          "Servicio de Agua potable"
         ]
       },
-      "detalles":{
+      "detalles": {
         "fecha": "2024-03-28T00:00:00.000Z",
         "duracion": "2 días",
         "edades": "Apartir de los 3 años",
-        "guia":["ingles"]
+        "guia": [
+          "Ingles"
+        ]
       }
     }
   ]
