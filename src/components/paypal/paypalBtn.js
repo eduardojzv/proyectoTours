@@ -51,7 +51,6 @@ export default function PaypalBtn({ setLoading }) {
                 }
                 const data = await res.json()
                 console.log("data res", data);
-                //await new Promise((resolve) => setTimeout(resolve, 3000))
                 router.push("/thank_you")
             } catch (error) {
                 return { error, status: 400 }
