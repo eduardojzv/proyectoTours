@@ -56,7 +56,7 @@ export default function ContactUserForm({ nextPage }) {
                         />
                     </div>
                     <div className='flex flex-row'>
-                        <Input name='DNI' type="text" variant='underlined' label="Ceduka" placeholder="Digite su cedula"
+                        <Input name='DNI' type="text" variant='underlined' label="Cedula" placeholder="Digite su cedula"
                             value={formContact.DNI}
                             onChange={handleInputChange}
                             isRequired
