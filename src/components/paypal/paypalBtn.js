@@ -10,13 +10,12 @@ export default function PaypalBtn({ setLoading }) {
     const { reservation } = useReservationStore();
     const { formContact } = useFormStore()
     async function createOrder() {
-        console.log("reservation", reservation);
         const { total, ...orderDetail } = reservation
         try {
             const res = await fetch('/api/checkout', {
                 method: "POST",
                 headers: {
-                    'Content-Type': 'application/json' // Especifica el tipo de contenido como JSON
+                    'Content-Type': 'application/json'
                 },
                 cache: 'no-store',
                 body: JSON.stringify({ data: orderDetail, totalPrice: total })
@@ -31,12 +30,12 @@ export default function PaypalBtn({ setLoading }) {
     async function onApprove(data, actions) {
         actions.order.capture().then(async (orderData) => {
             setLoading(true)
-            console.log("order data",orderData);
+            //console.log("order data", orderData);
             try {
                 const res = await fetch('/api/processPurchase', {
                     method: "POST",
                     headers: {
-                        'Content-Type': 'application/json' // Especifica el tipo de contenido como JSON
+                        'Content-Type': 'application/json'
                     },
                     cache: 'no-store',
                     body: JSON.stringify(
@@ -48,16 +47,15 @@ export default function PaypalBtn({ setLoading }) {
 
                 })
                 if (!res.ok) {
-                    console.log("shhh");
                     throw new Error('Problemas de conexion')
                 }
                 const data = await res.json()
                 console.log("data res", data);
+                //await new Promise((resolve) => setTimeout(resolve, 3000))
+                router.push("/thank_you")
             } catch (error) {
                 return { error, status: 400 }
             }
-            //await new Promise((resolve) => setTimeout(resolve, 3000))
-            router.push("/thank_you")
 
         })
     }

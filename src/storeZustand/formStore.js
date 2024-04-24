@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { persist } from 'zustand/middleware'
+import { createJSONStorage, persist } from 'zustand/middleware'
 export const useFormStore = create(
     persist(
         (set) => ({
@@ -10,6 +10,7 @@ export const useFormStore = create(
                 lastName: '',
                 email: '',
                 phone: '',
+                DNI:'',
                 state: false
             },
             formDetail: {
@@ -102,7 +103,7 @@ export const useFormStore = create(
         }),
         {
             name: 'formStorage',
-            getStorage: () => sessionStorage,
+            storage: createJSONStorage(() => sessionStorage),
         }
     )
 );

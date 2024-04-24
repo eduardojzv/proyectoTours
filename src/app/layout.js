@@ -10,14 +10,14 @@ const roboto = Roboto({
 })
 
 export const metadata = {
-  title: "Green zone",
-  description: "Green Zone",
+  title: "All Blue Tours",
+  description: "All Blue Tours",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} bg-slate-200 `}>
+      <body className={`${roboto.className} bg-slate-100 `}>
         <Providers>
           <header>
             {<NavBar />}

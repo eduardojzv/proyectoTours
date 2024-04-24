@@ -1,0 +1,35 @@
+---------------------------------
+http://10.90.29.148:8000/process_data_xml/
+{
+    "fecha": "22/04/2024",
+    "consecutivo": "001",
+    "emisor": {
+        "nombre": "John Doe",
+        "identificacion": "207360415",
+        "telefono": "64643675",
+        "correo": "sb-w9n4x15273833@business.example.com"
+    },
+    "receptor": {
+        "nombre": "Juanitito",
+        "identificacion": "Pérez",
+        "correo": "Pérez@gmail.com"
+    },
+    "detalle": [
+        {
+            "id_articulo": "Langostinos",
+            "descripcion": "Langostinos frescos",
+            "precio": 25.00,
+            "cantidad": 1,
+            "iva": 3.25,
+            "total_linea": 28.25
+        }
+    ],
+    "resumen": {
+        "Moneda": "Dolar",
+        "Metodo de pago": "paypal",
+        "total": 28.25,
+        "total_iva": 3.25,
+        "total_general":31.5
+      
+    }
+}

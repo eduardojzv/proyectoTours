@@ -26,11 +26,11 @@ export default function TourPage({ data }) {
             {/* top */}
             <div className='w-full'>
                 <h1 className='text-2xl'> Tour {data.isla.isla}</h1>
-                <span className='text-2xl'>Ofrecido por: Green Zone</span>
+                <span className='text-2xl'>Ofrecido por: AllBlue</span>
             </div>
             {/*imagenes de galeria*/}
             <div className='w-full text-center'>
-                <h1 className='text-xl text-white bg-green-500'>Imagenes del tour</h1>
+                <h1 className='text-2xl text-white bg-green-500'>Imagenes del tour</h1>
                 <SwiperComponent images={tourImages} />
             </div>
 
@@ -51,15 +51,17 @@ export default function TourPage({ data }) {
                         </ul>
                         <Divider className="my-4" />
                         <div className='h-auto w-full'>
-                            <Accordion selectionMode="multiple">
+                            <Accordion selectionMode="multiple" defaultExpandedKeys={'0'} >
                                 {Object.entries(data.tours[sliderImg].servicios).map(([key, value], idx) => (
                                     <AccordionItem key={idx} aria-label={`Accordion ${idx}`} title={key}>
                                         <ul className="list-disc">
-                                            {value.map((item, index) => (
-                                                <li key={`${key}-${index}`}>
-                                                    <span>{item}</span>
-                                                </li>
-                                            ))}
+                                            {
+                                                value.map((item, index) => (
+                                                    <li key={`${key}-${index}`}>
+                                                        <span>{`${index+1})${item}`}</span>
+                                                    </li>
+                                                ))
+                                            }
                                         </ul>
                                     </AccordionItem>
                                 ))}

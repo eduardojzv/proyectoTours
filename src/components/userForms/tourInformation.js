@@ -13,10 +13,9 @@ export default function TourInformation() {
         setData(reservation)
     }, [reservation])
     if (Object.keys(data).length === 0) return <div>Cargando</div>
-    //console.log("reservation",reservation);
     return (
-        <>
-            <div className='w-full h-36 col-span-1 relative'>
+        <div className='flex flex-row gap-2'>
+            <div className='w-2/4 h-36 relative'>
                 <Image
                     className="rounded-lg"
                     src={data.tourData?.islaImg}
@@ -27,13 +26,13 @@ export default function TourInformation() {
                     sizes="(max-width: 768px) 100vw,700px"
                 />
             </div>
-            <div className='col-span-3'>
+            <div className=''>
                 <h1>{data.tourData.titulo}</h1>
                 <ul className="list-none">
                     <li className='flex flex-row gap-2'>{<UserIcon style={'w-6 h-6'} />} {clientsQuantity}</li>
                     <li className='flex flex-row gap-2'>{<Calendar style={'w-6 h-6'} />} {data.tourDate}</li>
                 </ul>
             </div>
-        </>
+        </div>
     )
 }
