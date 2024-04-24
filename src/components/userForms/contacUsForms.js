@@ -9,6 +9,15 @@ export default function ContacUsForms() {
         name: '',
         description: ''
     });
+    function clearForm() {
+        setFormContact({
+            phone: '',
+            email: '',
+            lastName: '',
+            name: '',
+            description: ''
+        });
+    };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -21,11 +30,11 @@ export default function ContacUsForms() {
         <div className='p-2'>
             <div className='text-center'>
                 <h1>¿TIENES PREGUNTAS SOBRE NUESTROS SERVICIOS?</h1>
-                <p>En AllBlue Tours Costa Rica estamos dedicados a servir a nuestros clientes con el máximo servicio personalizado 
-                    y nos esforzamos por lograr la satisfacción total del cliente con todos nuestros servicios. 
+                <p>En AllBlue Tours Costa Rica estamos dedicados a servir a nuestros clientes con el máximo servicio personalizado
+                    y nos esforzamos por lograr la satisfacción total del cliente con todos nuestros servicios.
                     Si desea obtener más información sobre cualquiera de nuestros servicios, no dude en llamarnos o enviarnos un correo electrónico.</p><br></br>
             </div>
-            <form className='' action={()=>sendEmail(formContact)}>
+            <form className='' action={() => sendEmail(formContact)}>
                 <div className="grid grid-cols-1 w-full gap-4 p-2">
                     <Input name='name' variant='flat' type='text' label="Nombre" placeholder="Digite su nombre"
                         value={formContact.name}
@@ -60,11 +69,11 @@ export default function ContacUsForms() {
                 </div>
                 <div className='flex justify-end w-2/4'>
                     <Button type='submit' color="primary" variant="shadow">
-                        Enviar
-                    </Button>
-                </div>
-            </form>
+                    Enviar
+                </Button>
         </div>
+            </form >
+        </div >
     )
 }
 
