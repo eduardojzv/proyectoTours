@@ -35,22 +35,20 @@ export async function POST(request) {
                 "total_general": 31.5
             },
         }
-        try {
-            const response = await fetch('http://10.90.29.148:8000/process_data_xml/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(dataToXML)
-            });
-            if (!response.ok) {
-                throw new Error('Error de red al obtener los datos de la ONU');
-            }
-            const data = await response.json();
-            console.log("xml res",data);
-        } catch (error) {
-            console.error('Error al obtener los datos de la ONU:', error);
+
+        const response = await fetch('http://10.90.29.148:8000/process_data_xml/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataToXML)
+        });
+        if (!response.ok) {
+            throw new Error('Error de red al obtener los datos de la ONU');
         }
+        const data = await response.json();
+        console.log("xml res", data);
+
         return NextResponse.json({
             data: "hola"
         });
