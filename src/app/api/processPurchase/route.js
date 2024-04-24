@@ -23,9 +23,9 @@ export async function POST(request) {
                     "correo": contact.email,
                 },
                 receptor: {
-                    "nombre": "Juanitito",
-                    "identificacion": "Pérez",
-                    "correo": "Pérez@gmail.com"
+                    "nombre": "All Blue",
+                    "identificacion": "00107780562",
+                    "correo": "allbluetours506@gmail.com"
                 },
                 detalle: order.detalle,
                 resumen: {
