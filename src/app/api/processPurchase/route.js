@@ -44,7 +44,8 @@ export async function POST(request) {
             body: JSON.stringify(dataToXML)
         });
         if (!response.ok) {
-            throw new Error('Error de red al obtener los datos de la ONU');
+            console.log("error.ok",response);
+            throw new Error('Error al conectarse con xml');
         }
         const data = await response.json();
         console.log("xml res", data);
@@ -53,7 +54,7 @@ export async function POST(request) {
             data: "hola"
         });
     } catch (error) {
-        console.log("error", error);
+        console.log(error);
         return NextResponse.json({ error })
     }
 }
