@@ -10,7 +10,7 @@ export default function Footer() {
                         <h3 className="text-lg font-bold mb-2">Contáctanos</h3>
                         <p className="text-gray-600"><strong>Teléfono:</strong> <span className="font-bold">6175-8264 / 6077-9967</span></p>
                         <p className="text-gray-600"><strong>Horario de atención:</strong> Lunes a Viernes de 9:00 am a 5:00 pm</p>
-                        <p className="text-gray-600"><strong>Dirección:</strong> [Dirección de tu empresa]</p>
+                        <p className="text-gray-600"><strong>Dirección:</strong> Puntarenas, Puntarenas</p>
                         <p className="text-gray-600"><strong>Correo: </strong><a href="mailto:allbluetours506@gmail.com" className="text-blue-500">allbluetours506@gmail.com</a></p>
                     </div>
                     <div>
@@ -19,6 +19,7 @@ export default function Footer() {
                             <li><a href="/policies&private" className="text-blue-600 hover:underline">Política de Privacidad</a></li>
                             <li><a href="/terms&conditions" className="text-blue-600 hover:underline">Términos y Condiciones</a></li>
                             <li><a href="/frequentquestions" className="text-blue-600 hover:underline">Preguntas Frecuentes</a></li>
+                            <li><a href="/recommendations&policies" className="text-blue-600 hover:underline">Políticas y Recomendaciones de los Tours</a></li>
                         </ul>
                     </div>
                     <div>
