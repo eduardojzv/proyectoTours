@@ -36,21 +36,35 @@ export async function POST(request) {
             },
         }
 
-        const response = await fetch('http://10.90.29.148:8000/process_data_xml/', {
+        const responseXML = await fetch('http://10.90.29.148:8000/process_data_xml/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(dataToXML)
         });
-        if (!response.ok) {
+        const responsePDF = await fetch('http://10.90.29.160:5001/reporte01', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataToXML)
+        });
+        if (!responseXML.ok) {
             throw new Error('Error al conectarse con xml');
         }
-        const data = await response.json();
-        console.log("xml res", data);
+        if (!responsePDF.ok) {
+            throw new Error('Error al conectarse con PDF');
+        }
+        const dataXML = await responseXML.json();
+        const dataPDF = await responsePDF.json();
+
+        console.log("xml res", dataXML);
+        console.log("PDF res", dataPDF);
 
         return NextResponse.json({
-            data: "hola"
+            dataXML,
+            dataPDF
         });
     } catch (error) {
         return NextResponse.json({ error: error?.message })
